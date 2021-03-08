@@ -1,0 +1,266 @@
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.navbar {
+    padding: 20px;
+}
+.nav-profile {
+    position: relative;
+}
+
+.navbar-brand {
+    width: 20%;
+    text-align: center;
+    font-size: 24px;
+    color: blue;
+}
+
+.navbar-brand img {
+    width: 180px;
+    height: auto;
+}
+
+.nav-main {
+    width: 67%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.notification {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -5px;
+    right: -5px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: green;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.custom-select {
+    background: url('./chevron-down.svg') no-repeat right .75rem center/18px 20px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    height: 50px;
+    width: 170px;
+    box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.3);
+}
+
+.main {
+    display: flex;
+}
+
+.left-sidebar {
+    width: 30%;
+    height: calc(100vh - 100px);
+}
+
+.right-main {
+    width: 70%;
+}
+
+.apple-board {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 240px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-list {
+    padding: 0 20px;
+}
+
+.list {
+    min-height: 360px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.news {
+    width: 60%;
+}
+.date {
+    width: 40%;
+}
+
+.card {
+    border: none;
+    padding: 20px;
+}
+
+.right-main {
+    background-color: #F6F7FA;
+}
+
+.sort-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: white;
+}
+
+.sort-item {
+    display: flex;
+    cursor: pointer;
+}
+
+.sort-item i {
+    margin-right: 10px;
+}
+
+.sort-item .sort-content {
+    margin-right: 10px;
+}
+
+.sort-item .sort-title {
+    font-weight: 700;
+}
+
+.stock-table {
+    padding: 40px 60px;
+    background-color: #F6F7FA;
+}
+
+table {
+    border-spacing: 20px !important;
+    width: 100%;
+}
+
+table thead {
+    font-size: 14px;
+    color: grey;
+}
+
+table thead tr th {
+    white-space: nowrap;
+}
+
+table tbody .click-row {
+    cursor: pointer;
+    position: relative;
+}
+
+table tbody tr td {
+    padding: 20px 0;
+    white-space: nowrap;
+    position: relative;
+}
+
+.logo-icon {
+    width: 25px;
+    height: auto;
+    margin-right: 5px;
+}
+
+.chart-image {
+    width: 160px;
+}
+
+td .btn {
+    border-radius: 40px;
+    padding: 0.4375em 1.2em;
+    border: none;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+}
+
+.action-buttons {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 25px;
+}
+
+.row-active::after {
+    position: absolute;
+    content: "\2605";
+    display: flex;
+    align-items: center;
+    color: #B9BDC5;
+    padding-left: 10px;
+    width: 71%;
+    height: 86px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+    z-index: 0;
+}
+
+.row-active .chart-image {
+    /* display: none; */
+}
+
+.row-active .action-buttons {
+    display: block;
+}
+
+.row-active td {
+    padding: 28px 0;
+    position: relative;
+    z-index: 10000;
+}
+
+@media screen and (max-width: 812px) {
+    .nav-main {
+        width: 56%;
+    }
+    .navbar-brand img {
+        width: 125px;
+    }
+    .custom-select {
+        width: 133px;
+    }
+    .main {
+        flex-wrap: wrap;
+    }
+    .left-sidebar {
+        width: 100%;
+    }
+    .right-main {
+        /* margin-top: 200px; */
+        width: 100%;
+    }
+    .row-active::after {
+        width: 100%;
+        padding-left: 2px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .apple-board {
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .sort-items {
+        flex-wrap: wrap;
+        padding: 20px 20px;
+    }
+    .stock-table {
+        padding: 40px 20px;
+    }
+}
+

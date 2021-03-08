@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CryptoDex</title>
+    <style>
+      *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="index.html">
+        Awais
+      </a>
+      <div class="nav-main">
+        <a class="nav-profile" href="#">
+          <img class="avatar" src="download.jpg" />
+          <div class="notification">5</div>
+        </a>
+      </div>
+    </nav>
+    <div class="body">
+      <div class="main">
+        <div class="left-sidebar bg-dark">
+          <div class="card bg-dark">
+            <div class="tradingview-widget-container" id="myChart">
+              <div class="tradingview-widget-container__widget" ></div>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+                {
+                  "colorTheme": "light",
+                  "dateRange": "12m",
+                  "showChart": true,
+                  "locale": "en",
+                  "largeChartUrl": "",
+                  "isTransparent": false,
+                  "width": "100%",
+                  "height": "640",
+                  "plotLineColorGrowing": "rgba(33, 150, 243, 1)",
+                  "plotLineColorFalling": "rgba(33, 150, 243, 1)",
+                  "gridLineColor": "rgba(233, 233, 234, 1)",
+                  "scaleFontColor": "rgba(120, 123, 134, 1)",
+                  "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
+                  "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
+                  "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
+                  "tabs": [
+                    {
+                      "title": "News",
+                      "symbols": [
+                        {
+                          "s": "BITFINEX:OMGUSD",
+                          "d": ""
+                        },
+                        {
+                          "s": "BITFINEX:NEOUSD",
+                          "d": ""
+                        },
+                        {
+                          "s": "KRAKEN:DASHUSD",
+                          "d": ""
+                        },
+                        {
+                          "s": "BITFINEX:ETHUSD",
+                          "d": ""
+                        },
+                        {
+                          "s": "BITFINEX:XRPUSD",
+                          "d": ""
+                        },
+                        {
+                          "s": "KRAKEN:WAVESUSD",
+                          "d": ""
+                        }
+                      ],
+                      "originalTitle": "News"
+                    },
+                    {
+                      "title": "Date",
+                      "symbols": [
+                        {
+                          "s": "BITFINEX:OMGUSD",
+                          "d": ""
+                        },
+                        {
+                          "s": "BITFINEX:NEOUSD",
+                          "d": ""
+                        },
+                        {
+                          "s": "KRAKEN:DASHUSD",
+                          "d": ""
+                        },
+                        {
+                          "s": "BITFINEX:ETHUSD",
+                          "d": ""
+                        },
+                        {
+                          "s": "BITFINEX:XRPUSD",
+                          "d": ""
+                        },
+                        {
+                          "s": "KRAKEN:WAVESUSD",
+                          "d": ""
+                        }
+                      ],
+                      "originalTitle": "Date"
+                    }
+                  ]
+                }
+              </script>
+            </div>
+          </div>
+        </div>
+        <div class="right-main">
+          <!-- <div class="sort-items">
+            <div class="sort-item text-primary">
+              <i class="fas fa-sort-up mt-2"></i>
+              <div class="sort-content">
+                <div class="sort-title text-muted">LTC</div>
+                <div class="text-primary">140.88</div>
+              </div>
+            </div>
+            <div class="sort-item text-muted">
+              <i class="fas fa-sort-down"></i>
+              <div class="sort-content">
+                <div class="sort-title text-muted">ZEC</div>
+                <div class="text-muted">24.583</div>
+              </div>
+            </div>
+            <div class="sort-item text-primary">
+              <i class="fas fa-sort-up mt-2"></i>
+              <div class="sort-content">
+                <div class="sort-title text-muted">SUMO</div>
+                <div class="text-primary">3.12</div>
+              </div>
+            </div>
+            <div class="sort-item text-muted">
+              <i class="fas fa-sort-down"></i>
+              <div class="sort-content">
+                <div class="sort-title text-muted">ETH</div>
+                <div class="text-muted">600.21</div>
+              </div>
+            </div>
+            <div class="sort-item text-primary">
+              <i class="fas fa-sort-up mt-2"></i>
+              <div class="sort-content">
+                <div class="sort-title text-muted">PRO</div>
+                <div class="text-primary">3.12</div>
+              </div>
+            </div>
+          </div> -->
+          <div class="stock-table table-responsive">
+            <table id="display-table">
+              <thead>
+                <tr>
+                  <th scope="col">SYMBOL</th>
+                  <th scope="col">LAST PRICE</th>
+                  <th scope="col">24H CHANGE</th>
+                  <th scope="col">24H VOLUME</th>
+                  <th scope="col">24H VOLUME</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="click-row">
+                  <td class="clickable">
+                    <img class="logo-icon" src="icons/omisego.png" alt="omisego" />
+                    OmiseGo
+                  </td>
+                  <td class="clickable">
+                    0.75547915
+                  </td>
+                  <td class="clickable">
+                    +1.15%
+                  </td>
+                  <td class="clickable">
+                    68,354,474 USD
+                  </td>
+                  <td class="clickable">
+                    <img class="chart-image" src="charts/neo.png" />
+                  </td>
+                </tr>
+                <tr class="click-row">
+                  <td class="clickable">
+                    <img class="logo-icon" src="icons/neo.png" alt="neo" />
+                    Neo
+                  </td>
+                  <td class="clickable">
+                    9.09
+                  </td>
+                  <td class="clickable">
+                    +1.48%
+                  </td>
+                  <td class="clickable">
+                    13,342,411 USD
+                  </td>
+                  <td class="clickable">
+                    <img class="chart-image" src="charts/neo.png" />
+                  </td>
+                </tr>
+                <tr class="click-row">
+                  <td class="clickable">
+                    <img class="logo-icon" src="icons/dash.png" alt="dash" />
+                    Dash
+                  </td>
+                  <td class="clickable">
+                    52.19
+                  </td>
+                  <td class="clickable">
+                    -1.25%
+                  </td>
+                  <td class="clickable">
+                    27,900,001 USD
+                  </td>
+                  <td class="clickable">
+                    <img class="chart-image" src="charts/dash.png" />
+                  </td>
+                </tr>
+                <tr class="click-row">
+                  <td class="clickable">
+                    <img class="logo-icon" src="icons/ethereum.png" alt="ethereum" />
+                    Ethereum
+                  </td>
+                  <td class="clickable">
+                    151.27
+                  </td>
+                  <td class="clickable">
+                    +2.59%
+                  </td>
+                  <td class="clickable">
+                    5,342,411 USD
+                  </td>
+                  <td class="clickable">
+                    <img class="chart-image" src="charts/ethereum.png" />
+                  </td>
+                </tr>
+                <tr class="click-row">
+                  <td class="clickable">
+                    <img class="logo-icon" src="icons/ripple.png" alt="ripple" />
+                    Ripple
+                  </td>
+                  <td class="clickable">
+                    0.23080
+                  </td>
+                  <td class="clickable">
+                    +1.40%
+                  </td>
+                  <td class="clickable">
+                    342,411 USD
+                  </td>
+                  <td class="clickable">
+                    <img class="chart-image" src="charts/ripple.png" />
+                  </td>
+                </tr>
+                <tr class="click-row">
+                  <td class="clickable">
+                    <img class="logo-icon" src="icons/waves.png" alt="waves" />
+                    Waves
+                  </td>
+                  <td class="clickable">
+                    0.58284849
+                  </td>
+                  <td class="clickable">
+                    +2.20%
+                  </td>
+                  <td class="clickable">
+                    233,038 USD
+                  </td>
+                  <td class="clickable">
+                    <img class="chart-image" src="charts/waves.png" />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
